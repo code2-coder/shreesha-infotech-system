@@ -49,13 +49,7 @@ To deliver reliable, scalable, and innovative digital solutions that empower bus
 
 ---
 
-## 📞 Contact Us
 
-* 📧 Email: [your-email@example.com](mailto:your-email@example.com)
-* 📱 Phone: +91-XXXXXXXXXX
-* 🌐 Website: [https://yourwebsite.com](https://yourwebsite.com)
-
----
 
 ## 🤝 Contributing
 
