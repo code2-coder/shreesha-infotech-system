@@ -49,7 +49,16 @@ const BlogPage = () => {
             <div key={index} className="reel-card">
               {item.type === "video" ? (
                 <>
-                  {activeVideo === index ? (
+                  {/* Small card video is paused by default */}
+                  <video
+                    src={item.src}
+                    className="reel-video"
+                    onClick={() => handlePlayVideo(index)}
+                    controls={false}
+                  ></video>
+
+                  {/* Expanded overlay video */}
+                  {activeVideo === index && (
                     <div className="video-overlay">
                       <button
                         className="close-btn"
@@ -65,15 +74,6 @@ const BlogPage = () => {
                         className="expanded-video"
                       ></video>
                     </div>
-                  ) : (
-                    <video
-                      src={item.src}
-                      className="reel-video"
-                      onClick={() => handlePlayVideo(index)}
-                      muted
-                      loop
-                      playsInline
-                    ></video>
                   )}
                 </>
               ) : (
