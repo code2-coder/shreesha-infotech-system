@@ -18,6 +18,7 @@
   margin-bottom: 1rem;
 }
 
+
 .cta-blue-box p {
   font-size: 1.2rem;
   color: var(--primary-light);
@@ -70,6 +71,12 @@
   height: 100%;
   object-fit: cover;
   transition: transform 0.4s ease;
+}
+
+.water-img {
+  object-fit: contain;   /* show full image */
+           /* optional spacing */
+  background-color: #f8fafc; /* light bg for better look */
 }
 
 .svc-featured-card:hover .svc-img {

@@ -1,0 +1,45 @@
+﻿.reels-section {
+  padding: 40px 0;
+  background: #f6f8ff;
+}
+
+.reels-container {
+  display: flex;
+  overflow-x: auto; /* Horizontal scroll like Instagram reels */
+  gap: 16px;
+  padding: 0 20px;
+  scroll-behavior: smooth;
+}
+
+.reel-card {
+  min-width: 280px;
+  flex: 0 0 auto;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #e4e8f1;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.reel-card iframe,
+.reel-card img {
+  width: 100%;
+  height: 400px; /* Adjust height for short-video look */
+  object-fit: cover;
+}
+
+.reel-caption {
+  padding: 10px;
+  font-size: 0.95rem;
+  color: #10295f;
+  text-align: center;
+}
+
+.reels-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.reels-container::-webkit-scrollbar-thumb {
+  background-color: #1e3a84;
+  border-radius: 4px;
+}

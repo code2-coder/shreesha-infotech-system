@@ -55,6 +55,12 @@
   color: var(--primary);
 }
 
+.quote-btn {
+  padding: 0.5rem 1rem;
+  font-size: 0.88rem;
+  min-width: 140px;
+}
+
 .menu-toggle {
   display: none;
   background: none;
