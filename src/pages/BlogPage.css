@@ -1,16 +1,42 @@
-﻿.reels-section {
+﻿.page-header.dark-hero {
+  background: linear-gradient(105deg, #0a1b42 0%, #10295f 100%);
+  color: #fff;
+  padding: 60px 0;
+}
+.page-header .hero-title {
+  font-size: 2.6rem;
+  margin: 0;
+  letter-spacing: 0.08rem;
+}
+.page-header .hero-subtitle {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #d7e0fa;
+}
+
+/* Reels Section */
+.reels-section {
   padding: 40px 0;
   background: #f6f8ff;
 }
 
 .reels-container {
   display: flex;
-  overflow-x: auto; /* Horizontal scroll like Instagram reels */
+  overflow-x: auto;
   gap: 16px;
   padding: 0 20px;
   scroll-behavior: smooth;
 }
 
+.reels-container::-webkit-scrollbar {
+  height: 8px;
+}
+.reels-container::-webkit-scrollbar-thumb {
+  background-color: #1e3a84;
+  border-radius: 4px;
+}
+
+/* Card */
 .reel-card {
   min-width: 280px;
   flex: 0 0 auto;
@@ -21,13 +47,17 @@
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-.reel-card iframe,
-.reel-card img {
+/* Video & Image inside card */
+.reel-video,
+.reel-image {
   width: 100%;
-  height: 400px; /* Adjust height for short-video look */
+  height: 300px;
   object-fit: cover;
+  cursor: pointer;
+  border-radius: 12px;
 }
 
+/* Caption */
 .reel-caption {
   padding: 10px;
   font-size: 0.95rem;
@@ -35,11 +65,45 @@
   text-align: center;
 }
 
-.reels-container::-webkit-scrollbar {
-  height: 8px;
+/* Overlay for expanded video */
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 20px;
 }
 
-.reels-container::-webkit-scrollbar-thumb {
-  background-color: #1e3a84;
-  border-radius: 4px;
+/* Expanded video size */
+.expanded-video {
+  width: 80%;
+  max-width: 700px; /* moderate size */
+  height: auto;
+  border-radius: 12px;
+}
+
+/* Close button */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  padding: 6px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
 }

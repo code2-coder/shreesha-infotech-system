@@ -1,4 +1,4 @@
-﻿import React from "react";
+﻿import React, { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import "./BlogPage.css";
 
@@ -6,21 +6,26 @@ const reelsData = [
   {
     type: "video",
     src: "/videos/WhatsApp Video 2026-03-19 at 2.24.58 PM.mp4",
-    caption: "CCTV Installation in Nashik"
+    caption: "CCTV Installation in Nashik",
   },
-  // {
-  //   type: "image",
-  //   src: "#",
-  //   caption: "Outdoor bullet camera setup"
-  // },
-  // {
-  //   type: "video",
-  //   src: "",
-  //   caption: "Network routing tutorial"
-  // },
+  {
+    type: "video",
+    src: "/videos/AnotherVideo.mp4",
+    caption: "Network Routing Tutorial",
+  },
+  {
+    type: "image",
+    src: "/images/security_installation.jpg",
+    caption: "Outdoor Bullet Camera Setup",
+  },
 ];
 
 const BlogPage = () => {
+  const [activeVideo, setActiveVideo] = useState(null);
+
+  const handlePlayVideo = (index) => setActiveVideo(index);
+  const handleCloseVideo = () => setActiveVideo(null);
+
   return (
     <>
       <Helmet>
@@ -43,14 +48,36 @@ const BlogPage = () => {
           {reelsData.map((item, index) => (
             <div key={index} className="reel-card">
               {item.type === "video" ? (
-                <iframe
-                  title={`reel-video-${index}`}
-                  src={item.src}
-                  allow="autoplay; encrypted-media"
-                  allowFullScreen
-                ></iframe>
+                <>
+                  {activeVideo === index ? (
+                    <div className="video-overlay">
+                      <button
+                        className="close-btn"
+                        onClick={handleCloseVideo}
+                        aria-label="Close video"
+                      >
+                        &#10005;
+                      </button>
+                      <video
+                        src={item.src}
+                        controls
+                        autoPlay
+                        className="expanded-video"
+                      ></video>
+                    </div>
+                  ) : (
+                    <video
+                      src={item.src}
+                      className="reel-video"
+                      onClick={() => handlePlayVideo(index)}
+                      muted
+                      loop
+                      playsInline
+                    ></video>
+                  )}
+                </>
               ) : (
-                <img src={item.src} alt={item.caption} />
+                <img src={item.src} alt={item.caption} className="reel-image" />
               )}
               <p className="reel-caption">{item.caption}</p>
             </div>
