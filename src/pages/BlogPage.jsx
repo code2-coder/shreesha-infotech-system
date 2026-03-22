@@ -8,11 +8,11 @@ const reelsData = [
     src: "/videos/WhatsApp Video 2026-03-19 at 2.24.58 PM.mp4",
     caption: "CCTV Installation in Nashik",
   },
-  // {
-  //   type: "video",
-  //   src: "/videos/video2.mp4",
-  //   caption: "Network Routing Tutorial",
-  // },
+  {
+    type: "video",
+    src: "/videos/ai-Ad.mp4",
+    caption: "Smart Security with AI IP Cameras 📷",
+  },
   // {
   //   type: "image",
   //   src: "/images/security_installation.jpg",
